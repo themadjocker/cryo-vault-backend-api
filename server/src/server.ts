@@ -122,5 +122,3 @@ startServer().catch((error) => {
 })
 
 export { startServer }
-
-export { io }
