@@ -1,0 +1,153 @@
+// CryoVault Database Schema
+// PostgreSQL with Prisma ORM
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User roles enum
+enum UserRole {
+  MANAGER
+  AUDITOR
+}
+
+// Slot status enum
+enum SlotStatus {
+  AVAILABLE
+  RESERVED
+  OCCUPIED
+}
+
+// Temperature status enum
+enum TempStatus {
+  NORMAL
+  WARNING
+  CRITICAL
+}
+
+// Reservation status enum
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  EXPIRED
+  CANCELLED
+}
+
+// Booking priority enum
+enum Priority {
+  STANDARD
+  PRIORITY
+  EMERGENCY
+}
+
+// User model - Managers and Auditors
+model User {
+  id           String        @id @default(cuid())
+  email        String        @unique
+  name         String
+  passwordHash String        @map("password_hash")
+  role         UserRole      @default(MANAGER)
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+  
+  // Relations
+  reservations Reservation[]
+  bookings     Booking[]
+
+  @@map("users")
+}
+
+// Slot model - Freezer storage units
+model Slot {
+  id              String     @id @default(cuid())
+  name            String     @unique // e.g., "F1-A", "F2-B"
+  status          SlotStatus @default(AVAILABLE)
+  tempStatus      TempStatus @default(NORMAL) @map("temp_status")
+  temperature     Float      @default(-70.0)
+  targetTemp      Float      @default(-70.0) @map("target_temp")
+  lastMaintenance DateTime   @default(now()) @map("last_maintenance")
+  createdAt       DateTime   @default(now()) @map("created_at")
+  updatedAt       DateTime   @updatedAt @map("updated_at")
+
+  // Relations
+  reservations Reservation[]
+  bookings     Booking[]
+
+  @@index([status])
+  @@index([tempStatus])
+  @@map("slots")
+}
+
+// Reservation model - Temporary slot holds (2-min expiry)
+model Reservation {
+  id        String            @id @default(cuid())
+  slotId    String            @map("slot_id")
+  userId    String            @map("user_id")
+  expiresAt DateTime          @map("expires_at")
+  status    ReservationStatus @default(PENDING)
+  createdAt DateTime          @default(now()) @map("created_at")
+  updatedAt DateTime          @updatedAt @map("updated_at")
+
+  // Relations
+  slot    Slot     @relation(fields: [slotId], references: [id], onDelete: Cascade)
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  booking Booking?
+
+  // Partial unique index - only one PENDING reservation per slot
+  // Implemented via migration SQL
+  @@index([slotId, status])
+  @@index([expiresAt])
+  @@map("reservations")
+}
+
+// Booking model - Confirmed vaccine allocations
+model Booking {
+  id            String   @id @default(cuid())
+  slotId        String   @map("slot_id")
+  userId        String   @map("user_id")
+  reservationId String?  @unique @map("reservation_id")
+  manifestId    String   @map("manifest_id")
+  priority      Priority @default(STANDARD)
+  vaccineType   String?  @map("vaccine_type")
+  batchNumber   String?  @map("batch_number")
+  quantity      Int?
+  confirmedAt   DateTime @default(now()) @map("confirmed_at")
+  releasedAt    DateTime? @map("released_at")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  slot        Slot         @relation(fields: [slotId], references: [id], onDelete: Cascade)
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  reservation Reservation? @relation(fields: [reservationId], references: [id], onDelete: SetNull)
+  ledgerEntry Ledger?
+
+  @@index([slotId])
+  @@index([manifestId])
+  @@map("bookings")
+}
+
+// Ledger model - Blockchain-style audit trail
+model Ledger {
+  id           String   @id @default(cuid())
+  bookingId    String   @unique @map("booking_id")
+  previousHash String   @map("previous_hash")
+  dataHash     String   @map("data_hash")
+  nonce        Int
+  action       String   // BOOKING_CONFIRMED, TEMP_VERIFIED, SLOT_RELEASED, etc.
+  slotName     String?  @map("slot_name")
+  timestamp    DateTime @default(now())
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  // Relations
+  booking Booking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+
+  @@index([timestamp])
+  @@index([dataHash])
+  @@map("ledger")
+}

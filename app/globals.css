@@ -1,0 +1,238 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* CryoVault Clinical Design System */
+:root {
+  /* Core backgrounds */
+  --background: oklch(0.97 0.002 247);
+  --foreground: oklch(0.21 0.034 264);
+
+  /* Card surfaces */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.034 264);
+
+  /* Popover */
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.034 264);
+
+  /* Primary - Teal 700 (Safe/Normal) */
+  --primary: oklch(0.51 0.096 180);
+  --primary-foreground: oklch(0.99 0 0);
+
+  /* Secondary - Slate */
+  --secondary: oklch(0.93 0.004 264);
+  --secondary-foreground: oklch(0.21 0.034 264);
+
+  /* Muted */
+  --muted: oklch(0.93 0.004 264);
+  --muted-foreground: oklch(0.55 0.024 264);
+
+  /* Accent */
+  --accent: oklch(0.93 0.004 264);
+  --accent-foreground: oklch(0.21 0.034 264);
+
+  /* Destructive - Red 600 (Critical) */
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  /* Warning - Orange 500 */
+  --warning: oklch(0.7 0.18 55);
+  --warning-foreground: oklch(0.21 0.034 264);
+
+  /* Success - Teal */
+  --success: oklch(0.51 0.096 180);
+  --success-foreground: oklch(0.99 0 0);
+
+  /* Borders */
+  --border: oklch(0.88 0.006 264);
+  --input: oklch(0.88 0.006 264);
+  --ring: oklch(0.51 0.096 180);
+
+  /* Chart colors */
+  --chart-1: oklch(0.51 0.096 180);
+  --chart-2: oklch(0.7 0.18 55);
+  --chart-3: oklch(0.55 0.22 27);
+  --chart-4: oklch(0.6 0.12 250);
+  --chart-5: oklch(0.65 0.15 320);
+
+  /* Radius */
+  --radius: 0.5rem;
+
+  /* Sidebar - Dark clinical */
+  --sidebar: oklch(0.21 0.034 264);
+  --sidebar-foreground: oklch(0.93 0.004 264);
+  --sidebar-primary: oklch(0.51 0.096 180);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.3 0.024 264);
+  --sidebar-accent-foreground: oklch(0.93 0.004 264);
+  --sidebar-border: oklch(0.35 0.024 264);
+  --sidebar-ring: oklch(0.51 0.096 180);
+
+  /* CryoVault specific tokens */
+  --cryo-cold: oklch(0.65 0.15 230);
+  --cryo-frozen: oklch(0.75 0.12 210);
+  --cryo-lcd-bg: oklch(0.15 0.02 180);
+  --cryo-lcd-text: oklch(0.85 0.15 160);
+}
+
+.dark {
+  --background: oklch(0.15 0.02 264);
+  --foreground: oklch(0.93 0.004 264);
+  --card: oklch(0.2 0.024 264);
+  --card-foreground: oklch(0.93 0.004 264);
+  --popover: oklch(0.2 0.024 264);
+  --popover-foreground: oklch(0.93 0.004 264);
+  --primary: oklch(0.6 0.12 180);
+  --primary-foreground: oklch(0.15 0.02 264);
+  --secondary: oklch(0.3 0.024 264);
+  --secondary-foreground: oklch(0.93 0.004 264);
+  --muted: oklch(0.3 0.024 264);
+  --muted-foreground: oklch(0.65 0.016 264);
+  --accent: oklch(0.3 0.024 264);
+  --accent-foreground: oklch(0.93 0.004 264);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --warning: oklch(0.7 0.18 55);
+  --warning-foreground: oklch(0.15 0.02 264);
+  --border: oklch(0.35 0.024 264);
+  --input: oklch(0.35 0.024 264);
+  --ring: oklch(0.6 0.12 180);
+  --sidebar: oklch(0.12 0.02 264);
+  --sidebar-foreground: oklch(0.93 0.004 264);
+}
+
+@theme inline {
+  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Geist Mono", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-cryo-cold: var(--cryo-cold);
+  --color-cryo-frozen: var(--cryo-frozen);
+  --color-cryo-lcd-bg: var(--cryo-lcd-bg);
+  --color-cryo-lcd-text: var(--cryo-lcd-text);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* LCD Display Effect */
+.lcd-display {
+  background: linear-gradient(180deg, #0a1f1a 0%, #0d2922 100%);
+  font-family: "JetBrains Mono", monospace;
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+}
+
+/* Frost glass effect for cards */
+.frost-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Status LED pulse animation */
+@keyframes led-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.led-pulse {
+  animation: led-pulse 2s ease-in-out infinite;
+}
+
+/* Sparkline animation */
+@keyframes sparkline-draw {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.sparkline-animate {
+  stroke-dasharray: 100;
+  animation: sparkline-draw 1.5s ease-out forwards;
+}
+
+/* Slide-in animation for audit blocks */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in-right 0.3s ease-out forwards;
+}
+
+/* Chain verification animation */
+@keyframes chain-verify {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.chain-verify-animate {
+  background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.3), transparent);
+  background-size: 200% 100%;
+  animation: chain-verify 1s ease-in-out;
+}

@@ -1,0 +1,275 @@
+[00:00:00.945] Server  LOG      ✓ Ready in 599ms
+[00:00:03.762] Server  WARN     ⚠ Cross origin request detected from 192.168.29.147 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:04.782] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         className="fusion-extension-loaded"
+                        >
+                          ...
+                            <div className="flex items...">
+                              <div>
+                              <Button variant="ghost" size="icon" className="relative" aria-label="Notifications">
+                                <button data-slot="button" className={"inline-f..."} aria-label="Notifications">
+                                  <Bell>
+                                  <span
+                                    className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center round..."
+                                  >
++                                   2
+-                                   3
+                              ...
+                  ...
+
+[00:00:04.782] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:04.782] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:04.782] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:04.782] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.29.147:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.29.147:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765506735140}
+[00:00:04.782] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.29.147:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.29.147:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765506735140}
+[00:00:04.782] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:00:04.783] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:00:15.767] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:00:25.110] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:00:25.845] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         className="fusion-extension-loaded"
+                        >
+                          ...
+                            <div className="flex items...">
+                              <div>
+                              <Button variant="ghost" size="icon" className="relative" aria-label="Notifications">
+                                <button data-slot="button" className={"inline-f..."} aria-label="Notifications">
+                                  <Bell>
+                                  <span
+                                    className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center round..."
+                                  >
++                                   5
+-                                   3
+                              ...
+                  ...
+
+[00:00:25.845] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:25.845] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:25.845] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:25.845] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765506756682}
+[00:00:25.845] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765506756682}
+[00:00:35.778] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:00:39.775] Browser ERROR   [CryoVault] Hold API error: {}
+[00:00:45.775] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:00:46.829] Browser ERROR   [CryoVault] Hold API error: {}
+[00:00:55.774] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:01:05.776] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:01:15.769] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:01:25.771] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:01:35.776] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:01:45.768] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:01:55.774] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:02:05.772] Browser LOG     [CryoVault] Backend unavailable, using demo mode
+[00:02:23.690] Server  LOG      ✓ Compiled in 103ms
+[00:02:27.727] Server  LOG      ✓ Compiled in 117ms
+[00:02:28.772] Browser ERROR   ./lib/cryo-context.tsx:74:32
+Parsing ecmascript source code failed
+  72 |           const ledgerResponse = await fetch(`${API_BASE_URL}/api/ledger`)
+  73 |           if (ledgerResponse.ok) {
+> 74 |             const ledgerData = await ledgerResponse.json()
+     |                                ^^^^^
+  75 |             if (ledgerData.entries) setLedger(ledgerData.entries)
+  76 |           }
+  77 |         } else {
+
+await isn't allowed in non-async function
+
+Import traces:
+  Client Component Browser:
+    ./lib/cryo-context.tsx [Client Component Browser]
+    ./components/stats-overview.tsx [Client Component Browser]
+    ./components/stats-overview.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/cryo-context.tsx [Client Component SSR]
+    ./components/stats-overview.tsx [Client Component SSR]
+    ./components/stats-overview.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:02:37.771] Browser ERROR   ./lib/cryo-context.tsx:74:32
+Parsing ecmascript source code failed
+  72 |           const ledgerResponse = await fetch(`${API_BASE_URL}/api/ledger`)
+  73 |           if (ledgerResponse.ok) {
+> 74 |             const ledgerData = await ledgerResponse.json()
+     |                                ^^^^^
+  75 |             if (ledgerData.entries) setLedger(ledgerData.entries)
+  76 |           }
+  77 |         } else {
+
+await isn't allowed in non-async function
+
+Import traces:
+  Client Component Browser:
+    ./lib/cryo-context.tsx [Client Component Browser]
+    ./components/stats-overview.tsx [Client Component Browser]
+    ./components/stats-overview.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/cryo-context.tsx [Client Component SSR]
+    ./components/stats-overview.tsx [Client Component SSR]
+    ./components/stats-overview.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:02:38.641] Server  LOG      ✓ Compiled in 62ms
+[00:03:37.652] Server  LOG      ✓ Compiled in 73ms
+[00:04:09.297] Server  LOG      ✓ Compiled in 55ms
+[00:04:24.589] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url={"/?id=7e8..."} tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+        <SegmentViewNode type="page" pagePath="page.tsx">
+          <SegmentTrieNode>
+          <DashboardPage>
+            <ClinicalLayout>
+              <CryoProvider>
+                <div className="min-h-scre...">
+                  <Sidebar>
+                  <div className="ml-64 tran...">
+                    <TopBar>
+                      <header className="sticky top...">
+                        <div>
+                        <div className="flex items...">
+                          <div>
+                          <Button variant="ghost" size="icon" className="relative" aria-label="Notifications">
+                            <button data-slot="button" className={"inline-f..."} aria-label="Notifications">
+                              <Bell>
+                              <span
+                                className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-f..."
+                              >
++                               2
+-                               1
+                          ...
+                    ...
+                  ...
+        ...
+      ...
+
+[00:04:24.589] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:04:24.589] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:04:24.589] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:04:24.589] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/?id=7e8ada12-c933-4a07-9e65-caaf93157c29&vscodeBrowserReqId=1765506994702 color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/?id=7e8ada12-c933-4a07-9e65-caaf93157c29&vscodeBrowserReqId=1765506994702","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765506995428}
+[00:04:24.589] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/?id=7e8ada12-c933-4a07-9e65-caaf93157c29&vscodeBrowserReqId=1765506994702 color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/?id=7e8ada12-c933-4a07-9e65-caaf93157c29&vscodeBrowserReqId=1765506994702","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765506995429}
+[00:05:11.303] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         className="fusion-extension-loaded"
+                        >
+                          ...
+                            <div className="flex items...">
+                              <div>
+                              <Button variant="ghost" size="icon" className="relative" aria-label="Notifications">
+                                <button data-slot="button" className={"inline-f..."} aria-label="Notifications">
+                                  <Bell>
+                                  <span
+                                    className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center round..."
+                                  >
++                                   5
+-                                   1
+                              ...
+                  ...
+
+[00:05:11.428] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:05:11.428] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:05:11.428] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:05:11.428] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765507042247}
+[00:05:11.428] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765507042247}
