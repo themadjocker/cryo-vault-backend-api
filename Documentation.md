@@ -1,14 +1,5 @@
 # ❄️ CryoVault: Vaccine Cold Chain Management System
 
-> **High-Integrity Booking & Audit Platform for Pharmaceutical Logistics**
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/Node.js-v18+-green.svg)](https://nodejs.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16+-blue.svg)](https://www.postgresql.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
-
----
-
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
@@ -38,8 +29,8 @@ Modern cold chain logistics face two critical risks:
 
 ### Core Features
 
-✅ **Atomic Slot Reservations** - Database-enforced, zero race conditions  
-✅ **Immutable Audit Trail** - HMAC-linked ledger for compliance  
+✅ **Atomic Slot Reservations** - Database-enforced, zero race conditions 
+✅ **Immutable Audit Trail** - HMAC-linked ledger for compliance
 ✅ **Real-Time Updates** - Socket.io for instant client synchronization  
 ✅ **Hardware Simulation UI** - Professional thermal & monitoring views  
 ✅ **Production-Ready** - Neon PostgreSQL with connection pooling  
